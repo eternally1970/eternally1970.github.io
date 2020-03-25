@@ -172,44 +172,44 @@
               <p><!--markdown-->大伙用过了这么多的汉化软件，一定对汉化软件有点想法吧，奈何网上的汉化教程要么太少，要么太老，作为小白用户，能不能也自己进行软件汉化呢？今天就给大伙带来，WinRAR汉化教程。RAR这个软件，网上的汉化版太多太多了，最出名的就是烈火和大眼仔的汉化版了，当然，果核也有汉化版，不过没有他们出名罢了。那么今天，我就把这个方法教给大家，让你自己动手完成汉化。</p>
 <h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p> 由于很多软件的开发没有做到国际化，也就是允许设置不同的语言，就需要我们对软件的资源进行修改实现汉化功能。不同的软件内部有不同的文件格式，资源文件的结构，也不同。我们的入手点为资源文件，资源文件的寻找和修改有很多种方法，WinRAR这个软件，就是其中一个代表。</p>
 <p>以前的WinRAR软件没有提供语言包功能，所以的字符都是写死了的，所以需要我们进行编辑资源来实现汉化。不过现在WinRAR已经有语言包的功能了，但是我们还是要用下面的方法继续操作。</p>
-<p>你需要一款资源编辑软件，这儿推荐<a href="/220">Resource Hacker</a><br><img src="http://h.com/usr/uploads/1761437030.png" srcset="/img/loading.gif" alt=""></p>
+<p>你需要一款资源编辑软件，这儿推荐<a href="/220">Resource Hacker</a><br><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/1761437030.png" srcset="/img/loading.gif" alt=""></p>
 <blockquote>
 <p>Resource Hacker是一款免费的资源编译器软件，用于查看，修改，添加和删除 Win32 可执行文件的资源，内置了一个内部资源编译器和反编译器，能够对简单的资源快速编辑。</p>
 </blockquote>
-<h3 id="开始汉化"><a href="#开始汉化" class="headerlink" title="开始汉化"></a>开始汉化</h3><p>首先访问官方下载官方安装包，选择美国英文原版，根据自己的电脑位数选择。[其实官方有简体中文了，不过是国内一家代理公司搞的，不过为了练手，我们还是用英文版本来吧，不过你要直接拿中文版本修改成你的也可以]<br><img src="http://h.com/usr/uploads/2117304527.png" srcset="/img/loading.gif" alt=""></p>
+<h3 id="开始汉化"><a href="#开始汉化" class="headerlink" title="开始汉化"></a>开始汉化</h3><p>首先访问官方下载官方安装包，选择美国英文原版，根据自己的电脑位数选择。[其实官方有简体中文了，不过是国内一家代理公司搞的，不过为了练手，我们还是用英文版本来吧，不过你要直接拿中文版本修改成你的也可以]<br><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/2117304527.png" srcset="/img/loading.gif" alt=""></p>
 <p>下载下来安装包后，你可以直接安装，或者有电脑有压缩软件的话，可以直接解压文件，得到软件目录。为了不让这个软件管理文件，我是直接解压的。</p>
-<p>解压后，我们要处理的文件是主程序“WinRAR.exe”<br><img src="http://h.com/usr/uploads/3608949045.png" srcset="/img/loading.gif" alt=""></p>
-<p>把主程序拖到Resource Hacker里面打开，打开后你可以看到软件会列出来各种资源，比如图片，对话框，图标，清单等信息。<br><img src="http://h.com/usr/uploads/2365707283.png" srcset="/img/loading.gif" alt=""></p>
+<p>解压后，我们要处理的文件是主程序“WinRAR.exe”<br><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/3608949045.png" srcset="/img/loading.gif" alt=""></p>
+<p>把主程序拖到Resource Hacker里面打开，打开后你可以看到软件会列出来各种资源，比如图片，对话框，图标，清单等信息。<br><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/2365707283.png" srcset="/img/loading.gif" alt=""></p>
 <p>里面的资源包括了WinRAR各种的资源，有些软件图片上也是英文字幕，我们就可以通过替换图片来达到汉化的目的。例如，下图中101序号的图片，在WinRAR中对应关于里面的LOGO。</p>
-<p><img src="http://h.com/usr/uploads/585400994.png" srcset="/img/loading.gif" alt=""></p>
+<p><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/585400994.png" srcset="/img/loading.gif" alt=""></p>
 <p>选择这个资源，右键可以导出图片，以及替换图片。通过替换资源后，保存文件，重新打开WinRAR，就可以看到</p>
 <p>图片已经被替换了。</p>
-<p><img src="http://h.com/usr/uploads/3724438608.png" srcset="/img/loading.gif" alt=""></p>
-<p>相应的，汉化文字，需要修改字符串资源。在软件中找到字符串列表，点击就可以看到脚本了，修改代码中引号中的文字来达到汉化。代码其他的地方，请勿修改，以免发生错误。<br><img src="http://h.com/usr/uploads/1503845393.png" srcset="/img/loading.gif" alt=""></p>
+<p><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/3724438608.png" srcset="/img/loading.gif" alt=""></p>
+<p>相应的，汉化文字，需要修改字符串资源。在软件中找到字符串列表，点击就可以看到脚本了，修改代码中引号中的文字来达到汉化。代码其他的地方，请勿修改，以免发生错误。<br><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/1503845393.png" srcset="/img/loading.gif" alt=""></p>
 <p>里面的文本很多，需要们一个一个的寻找，也可以使用搜索按钮进行搜索。</p>
 <p>例如，我们要修改软件的功能按钮界面文本，如下图</p>
-<p><img src="http://h.com/usr/uploads/779789180.png" srcset="/img/loading.gif" alt=""></p>
+<p><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/779789180.png" srcset="/img/loading.gif" alt=""></p>
 <p>找到了相应的字符串表后，修改成中文，点击绿色的播放按钮进行编译。编译成功后，还需要点击一下保存</p>
-<p><img src="http://h.com/usr/uploads/3420147132.png" srcset="/img/loading.gif" alt=""></p>
+<p><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/3420147132.png" srcset="/img/loading.gif" alt=""></p>
 <p>修改后，可以看到，相关的英文已经变成了中文，如下图</p>
-<p><img src="http://h.com/usr/uploads/2519041969.png" srcset="/img/loading.gif" alt=""></p>
+<p><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/2519041969.png" srcset="/img/loading.gif" alt=""></p>
 <p>剩下的字符就需要大家耐心的一个一个去修改了，所以汉化不是技术活，是苦力活</p>
 <p>那么，有的字符汉化完成了，为什么界面上还有英文呢？比如关于界面。这个时候，就还需要我们修改对话框的内容，找到对话框，选择一个，点击，就会弹出浏览，并且还有窗口浏览。</p>
 <p>这不就是我们要修改的关于界面吗？原来这部分资源在对话框里面。</p>
-<p><img src="http://h.com/usr/uploads/1163425445.png" srcset="/img/loading.gif" alt=""></p>
+<p><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/1163425445.png" srcset="/img/loading.gif" alt=""></p>
 <p>双击对话框浏览区域的组件，就会弹出一个属性框，我们不仅可以修改内容，还可以修改组件的位置！</p>
-<p><img src="http://h.com/usr/uploads/2264617020.png" srcset="/img/loading.gif" alt=""></p>
+<p><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/2264617020.png" srcset="/img/loading.gif" alt=""></p>
 <p>把大部分内容修改成中文后，同样的需要编译后保存</p>
-<p><img src="http://h.com/usr/uploads/999728316.png" srcset="/img/loading.gif" alt=""></p>
+<p><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/999728316.png" srcset="/img/loading.gif" alt=""></p>
 <p>保存完成后在软件里面看看，关于页面已经变成中文了。</p>
-<p><img src="http://h.com/usr/uploads/490091351.png" srcset="/img/loading.gif" alt=""></p>
+<p><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/490091351.png" srcset="/img/loading.gif" alt=""></p>
 <p>根据上面的教程，我们就能完整的汉化了。</p>
 <p>在软件属性中，有些软件是英文的，这儿汉化也不彻底怎么版呢？如何修改文件属性呢？</p>
-<p><img src="http://h.com/usr/uploads/2302496007.png" srcset="/img/loading.gif" alt=""></p>
+<p><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/2302496007.png" srcset="/img/loading.gif" alt=""></p>
 <p>一样的有方法，在软件找到版本信息，这儿里面不就是上图的属性信息吗？</p>
-<p>试试修改一下<br><img src="http://h.com/usr/uploads/2014186051.png" srcset="/img/loading.gif" alt=""></p>
+<p>试试修改一下<br><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/2014186051.png" srcset="/img/loading.gif" alt=""></p>
 <p>编译后保存，我们可以看到，属性里面的信息也同样修改了。</p>
-<p><img src="http://h.com/usr/uploads/1496748932.png" srcset="/img/loading.gif" alt=""></p>
+<p><img src="https://blog-1255968007.cos.ap-chengdu.myqcloud.com/1496748932.png" srcset="/img/loading.gif" alt=""></p>
 <h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>Resource Hacker这个软件是一款非常强大的资源编辑工具，能够修改很多的程序。</p>
 <p>软件的汉化不仅仅是用这个软件来修改，还有很多的专业汉化软件。并且不是所有的软件都能用这个软件汉化的，所以大家要结合情况而定，如果软件拖到里面，找不到相关字符串，就说明可能这个软件没法用Resource Hacker修改了。</p>
 
