@@ -169,9 +169,8 @@
           <div class="post-content mx-auto" id="post">
             
             <div class="markdown-body">
-              <!--markdown-->### 写在前面：
-<p>可以说对Sublime Text3是真爱了，我最爱的代码编辑器，没有之一。CSDN上不少前辈都写过如何在Sublime Text3中编译调试运行代码，根据他们的博客，我成功设置好了Python在Sublime Text下的编译运行，但是C/C++的我找到了十多篇博客才设置成功（因为我发现里面就两篇博客真正实用）。所以我想总结一下，自己写一篇关于在Sublime Text3中编译运行C/C++的博客。</p>
-<h3 id="参考博客："><a href="#参考博客：" class="headerlink" title="参考博客："></a>参考博客：</h3><p>① <a href="https://blog.csdn.net/constantin_/article/details/79688104" target="_blank" rel="noopener">怎么让sublime text3可以运行c/c++</a>（来源：<a href="https://me.csdn.net/constantin_" target="_blank" rel="noopener">constantine___</a>）。</p>
+              <p><!--markdown-->### 写在前面：<br>可以说对Sublime Text3是真爱了，我最爱的代码编辑器，没有之一。CSDN上不少前辈都写过如何在Sublime Text3中编译调试运行代码，根据他们的博客，我成功设置好了Python在Sublime Text下的编译运行，但是C/C++的我找到了十多篇博客才设置成功（因为我发现里面就两篇博客真正实用）。所以我想总结一下，自己写一篇关于在Sublime Text3中编译运行C/C++的博客。</p>
+<h3 id="参考博客："><a href="#参考博客：" class="headerlink" title="参考博客："></a>参考博客：</h3><p>① <a href="https://blog.csdn.net/constantin_/article/details/79688104" target="_blank" rel="noopener">怎么让sublime text3可以运行c/c++</a>（来源：<a href="https://me.csdn.net/constantin_" target="_blank" rel="noopener">constantine<em>_</em></a>）。</p>
 <p>我发现我按①设置好了后，不能读取cin和scanf的输入。</p>
 <p>②<a href="https://blog.csdn.net/lhshu2008/article/details/17582949#commentBox" target="_blank" rel="noopener">sublime text 3+minGW 无法读取cin，使用命令行cmd成功运行</a>（来源作者：<a href="https://me.csdn.net/lhshu2008" target="_blank" rel="noopener">食野之苹</a>）。</p>
 <p>我发现我按②设置好了后，程序出现了中文乱码。 </p>
@@ -208,7 +207,8 @@
             &quot;cmd&quot;: [&quot;cmd&quot;, &quot;/c&quot;, &quot;g++&quot;, &quot;${file}&quot;, &quot;-o&quot;, &quot;${file_path}/${file_base_name}&quot;, &quot;&amp;&amp;&quot;, &quot;start&quot;, &quot;cmd&quot;, &quot;/c&quot;, &quot;${file_path}/${file_base_name} &amp; pause&quot;]
         }
     ]
-}</code></pre><p>———————————————2019.08.13更新————————————————————<br>Linux环境下要这样配置</p>
+}
+</code></pre><p>———————————————2019.08.13更新————————————————————<br>Linux环境下要这样配置</p>
 <pre><code>
 
 
@@ -244,7 +244,7 @@
 <h3 id="Sublime-Text3添加快捷键："><a href="#Sublime-Text3添加快捷键：" class="headerlink" title="Sublime Text3添加快捷键："></a>Sublime Text3添加快捷键：</h3><p>如何像Codeblocks一样按下F8后即可对代码进行编译运行呢？在菜单栏选中Preferences，然后再选中Key Bindings。</p>
 <p>在新出现的界面中输入一行内容（我是把F8设置为快捷键的）：</p>
 <p><code>{ &quot;keys&quot;: [&quot;f8&quot;], &quot;command&quot;: &quot;build&quot;, &quot;args&quot;: {&quot;variant&quot;: &quot;Run&quot;} }</code><br>输入完成后按下Ctrl+s保存即可。 </p>
-<p>对了，还没有破解呢（原谅我的贫穷，希望有能力的兄弟还是购买正版）<br>打开sublime text ,选择help–&gt;enter license，将下面的内容复制到输入框中：</p>
+<p>对了，还没有破解呢（原谅我的贫穷，希望有能力的兄弟还是购买正版）<br>打开sublime text ,选择help—&gt;enter license，将下面的内容复制到输入框中：</p>
 <pre><code>
 ----- BEGIN LICENSE -----
 sgbteam
@@ -258,7 +258,8 @@ EA7E-1153259
 20B3C4F1 E917B5B3 87C38D9C ACCE7DD8
 5F7EF854 86B9743C FADC04AA FB0DA5C0
 F913BE58 42FEA319 F954EFDD AE881E0B
------- END LICENSE ------</code></pre><p> 大功告成！尽情显示使用Sublime Text3编辑代码的快乐吧！<br>————————————————</p>
+------ END LICENSE ------
+</code></pre><p> 大功告成！尽情显示使用Sublime Text3编辑代码的快乐吧！<br>————————————————</p>
 <p>版权声明：本文为CSDN博主「喜欢ctrl的cxk」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_42449444/article/details/85146975" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42449444/article/details/85146975</a></p>
 
             </div>

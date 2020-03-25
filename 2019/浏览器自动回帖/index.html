@@ -169,24 +169,27 @@
           <div class="post-content mx-auto" id="post">
             
             <div class="markdown-body">
-              <!--markdown-->我们的浏览器，除了支持各种URL以外，还支持JavaScript代码功能，那么我们就可以利用JavaScript代码，为我们定制一键回帖功能
-
+              <p><!--markdown-->我们的浏览器，除了支持各种URL以外，还支持JavaScript代码功能，那么我们就可以利用JavaScript代码，为我们定制一键回帖功能</p>
 <p>以52破解论坛为例，我们希望在帖子底部，输入内容，并且点击发表回复按钮</p>
 <p>首先我们要了解一下HTML组件。你只需要眼熟这个东西就行了，在网页中，文本框一般用<br><code>&lt;textarea&gt;&lt;/textarea&gt;</code>或者<code>&lt;input type=”text”&gt;&lt;/input&gt;</code>表示</p>
 <p>前者为多行文本框，后者为单行文本框。在有谷歌内核的浏览器中，点击右键-&gt;审查元素 或者 检查 选项。<br>360浏览器中，右键为审查元素。谷歌浏览器为检查。</p>
 <p>可以看到，回复内容框有是&lt;textarea开头，是一个多行文本框，我们在这行里面找到id属性，复制这个id<br><img src="/usr/uploads/Web/1396821B701DB92F4E304E26693C31810AFE92B6.png" srcset="/img/loading.gif" alt=""></p>
 <p>下面这个代码，其中fastpostmessage为网页文本框的id，value后面引号内容为回复内容，这儿我们使用通用水贴语句，谢谢楼主分享：</p>
-<pre><code>JavaScript:document.getElementById(&#39;fastpostmessage&#39;).value=&quot;谢谢楼主分享&quot;; void(0);</code></pre><p>把上面这句代码，复制到浏览器地址栏并回车，是不是文本框里面就会有我们输入的内容了呢？<br>虽然和上面温馨提示的内容重合了，但是这个并不影响</p>
+<pre><code>JavaScript:document.getElementById(&#39;fastpostmessage&#39;).value=&quot;谢谢楼主分享&quot;; void(0);
+</code></pre><p>把上面这句代码，复制到浏览器地址栏并回车，是不是文本框里面就会有我们输入的内容了呢？<br>虽然和上面温馨提示的内容重合了，但是这个并不影响</p>
 <p>我们输入了内容，下一步就应该点击发表回复了<br>网页代码中，按钮为：<code>&lt;button&gt;&lt;/button&gt;</code> 或者<code>&lt;input type=”submit”&gt;&lt;/input&gt;</code> 或者<code>&lt;input type=”submit”&gt;&lt;/input&gt;</code><br>我们同样的，在网页按钮点击右键，审查元素。同样的，我们记录好id为fastpostsubmit<br><img src="/usr/uploads/Web/5979848A8B8203EEB1F15899C8C92C39C692D3B1.png" srcset="/img/loading.gif" alt=""></p>
 <p>在地址栏输入如下代码，其中fastpostsubmit为我们记录的id值。</p>
-<pre><code class="JavaScript">javascript:document.getElementById(&quot;fastpostsubmit&quot;).click();</code></pre>
+<pre><code class="lang-JavaScript">javascript:document.getElementById(&quot;fastpostsubmit&quot;).click();
+</code></pre>
 <p>你会看到神奇的一幕，回复成功了！</p>
 <p>我们刚刚是分步骤搞的，那么我们这儿组合一下，在地址栏输入，下面代码，可以看到，一次性就回复成功了！</p>
-<pre><code class="JavaScript">JavaScript:document.getElementById(&#39;fastpostmessage&#39;).value=&quot;谢谢楼主分享&quot;; void(0);document.getElementById(&quot;fastpostsubmit&quot;).click();</code></pre>
+<pre><code class="lang-JavaScript">JavaScript:document.getElementById(&#39;fastpostmessage&#39;).value=&quot;谢谢楼主分享&quot;; void(0);document.getElementById(&quot;fastpostsubmit&quot;).click();
+</code></pre>
 <p>看到这儿有人可能会说了，我每次复制这么多的代码，不是更麻烦么？<br>小伙子，你还是太年轻了！你知道浏览器有个叫做书签的功能哦<br>复制代码，添加到收藏夹，网址就写我们这个代码内容<br><img src="/usr/uploads/Web/E9C1F4931638759A31AB9C53A59B2F835FBE0A42.png" srcset="/img/loading.gif" alt=""></p>
 <p>添加后，我们就可以看到浏览器地址栏我们的书签了，每次要回帖，点击一下，全部就完成了！<br><img src="/usr/uploads/Web/442C4F4983EAD2B13612036480E47739D31A7CF7.png" srcset="/img/loading.gif" alt=""></p>
 <p>到此，我们的浏览器自动回复功能就完成了，每次我们只需要点一下，就能水贴。<br>我们再为回帖加一个功能，允许我们自定义回帖内容<br>我们要用到js代码是prompt，没关系，看我操作<br>下面是完整代码</p>
-<pre><code class="JavaScript">javascript:var text=prompt(&quot;请输入要回复的内容&quot;,&quot;谢谢楼主分享&quot;);if(text!=null){document.getElementById(&quot;fastpostmessage&quot;).value=text;void (0);document.getElementById(&quot;fastpostsubmit&quot;).click()};</code></pre>
+<pre><code class="lang-JavaScript">javascript:var text=prompt(&quot;请输入要回复的内容&quot;,&quot;谢谢楼主分享&quot;);if(text!=null){document.getElementById(&quot;fastpostmessage&quot;).value=text;void (0);document.getElementById(&quot;fastpostsubmit&quot;).click()};
+</code></pre>
 <p>大家会了吗，这个代码是万能的哦，可以用于所有的论坛。当然了，id需要你自己去获取。也适用于所有的网页，当然，如果没有id，需要其他的方式来操作，这我就不演示了</p>
 
             </div>
