@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>京东自动好评得京东豆脚本 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.13.0/css/mdb.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css" />
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link  rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css" />
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+<!-- 自定义样式保持在最底部 -->
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Hexo</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+                <p class="mt-3 post-meta">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                  星期六, 八月 24日 2019, 1:13 下午
+                </p>
+              
+
+              <p class="mt-1">
+                
+                  
+                  <span class="post-meta">
+                    <i class="far fa-chart-bar"></i>
+                    973 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta">
+                      <i class="far fa-clock"></i>
+                      4 分钟
+                  </span>
+                
+
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5 z-depth-3" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <div class="markdown-body">
+              <!--markdown-->浏览器打开京东登录账号，按F12点击Console->复制下列代码->粘贴回车键坐等即可
+<pre><code class="JavaScript">document.body.innerHTML = &quot;&quot;;
+$(&quot;html&quot;).css(&quot;overflow&quot;, &quot;hidden&quot;);
+$(&quot;body&quot;).append(&#39;&lt;div id=&quot;topTitle&quot; style=&quot;padding:20px;display:block;font-size:48px;color:#FFFFFF;background-color:#e2231a;width:100%;text-align:center&quot;&gt;京东自动评价JS脚本 www.xd0.com&lt;/div&gt;&lt;iframe src=&quot;https://club.jd.com/myJdcomments/myJdcomment.action?sort=0&quot; style=&quot;width:99%;height:800px&quot; id=&quot;JDifr&quot;&gt;&lt;/iframe&gt;&#39;);
+$(&quot;#J-global-toolbar&quot;).remove();
+let isFiveStar = true;
+$(&quot;#topTitle&quot;).click(function() { (isFiveStar = !isFiveStar) ? $(&quot;#topTitle&quot;).css(&quot;background-color&quot;, &quot;#e2231a&quot;) : $(&quot;#topTitle&quot;).css(&quot;background-color&quot;, &quot;#8B0000&quot;);
+});
+let pendingNum = 1;
+let waitSubmitIds;
+let curId = 0;
+let maxCurId = 0;
+$(&quot;#JDifr&quot;).load(function() {
+    if ($(&quot;#JDifr&quot;).attr(&quot;src&quot;).indexOf(&quot;sort&quot;) &gt; 0) {
+        pendingNum = ($(&quot;#JDifr&quot;).contents().find(&quot;a.text:first&quot;).siblings().length &gt; 0 &amp;&amp; $(&quot;#JDifr&quot;).contents().find(&quot;a.text:first&quot;).attr(&quot;href&quot;) == &quot;?sort=0&quot;) ? parseInt($(&quot;#JDifr&quot;).contents().find(&quot;a.text:first&quot;).next().text()) : 0;
+        waitSubmitIds = $(&quot;#JDifr&quot;).contents().find(&quot;.number&quot;).length &gt; 0 ? $(&quot;#JDifr&quot;).contents().find(&quot;.number&quot;).text().match(/\d{10,12}/g) : 0;
+        maxCurId = waitSubmitIds ? waitSubmitIds.length: 0;
+        curId = 0;
+        if (pendingNum != 0 &amp;&amp; maxCurId &gt; 0) {
+            gotoNextURL(&quot;order&quot;);
+        } else {
+            showInfo(&quot;订单全部评价完毕！！！&quot;);
+        }
+    } else if ($(&quot;#JDifr&quot;).attr(&quot;src&quot;).indexOf(&quot;ruleid&quot;) &gt; 0 &amp;&amp; curId &lt; maxCurId) {
+        sumbitEvaluate();
+        gotoNextURL(&quot;order&quot;);
+    } else if (curId == maxCurId) {
+        gotoNextURL(&quot;main&quot;);
+    } else {
+        showInfo(&quot;异常了！联系作者！&quot;);
+    }
+    $(&quot;#JDifr&quot;).contents().find(&quot;html&quot;).css(&quot;overflow&quot;, &quot;hidden&quot;);
+});
+function showInfo(infoShow) {
+    $(&quot;#JDifr&quot;).contents().find(&quot;#nav&quot;).text(infoShow);
+    $(&quot;#JDifr&quot;).contents().find(&quot;#nav&quot;).css({
+        &quot;text-align&quot;: &quot;center&quot;,
+        &quot;padding&quot;: &quot;30px&quot;,
+        &quot;margin&quot;: &quot;1px&quot;,
+        &quot;font-size&quot;: &quot;50px&quot;,
+        &quot;color&quot;: &quot;#FFFFFF&quot;,
+        &quot;width&quot;: &quot;100%&quot;
+    });
+}
+function gotoNextURL(nextURL) {
+    trueNextURL = (nextURL == &quot;main&quot;) ? (&quot;https://club.jd.com/myJdcomments/myJdcomment.action?sort=0&quot;) : (&quot;https://club.jd.com/myJdcomments/orderVoucher.action?ruleid=&quot; + waitSubmitIds[curId]);
+    window.setTimeout(function() {
+        $(&quot;#JDifr&quot;).attr(&quot;src&quot;, trueNextURL);
+    },
+    500);
+}
+function sumbitEvaluate() {
+    if ($(&quot;#JDifr&quot;).attr(&quot;src&quot;).indexOf(&quot;club.jd.com&quot;) &gt; 0) {
+        let tempInter,
+        contentArr = [&#39;商品质量很好，很满意，配送速度快啊，而且配送员态度也非常好。&#39;, &#39;挺好的，非常实用。京东的物流很快哟~希望以后会更快╭(╯3╰)╮&#39;, &#39;多快好省，京东给力，下次还是要选择京东商城，没错，非常满意&#39;, &#39;非常好，一起买的，价格便宜，快递又快，京东商城还是非常的专业和贴心!&#39;, &#39;活动期间买的很实惠，京东自营，值得信赖。&#39;, &#39;便宜好用，值得推荐买买买，同事都说好用。下次继续买买买，哈哈哈…&#39;, &#39;京东物流就是一个字快，昨晚10点多，11点前下的单今天早上就收到，包装得很好。&#39;, &#39;京东购物使我们的生活更便捷了！京东商品丰富，无所不有，自营商品更是价格优惠！&#39;, &#39;一直上京东商城网购，东西非常不错，价格便宜，物流快，是正品&#39;, &#39;质量很好，性价比高，值得购买，送货速度快！！&#39;, &#39;怒赞！（此评论虽仅有两个字，可谓言简意赅，一字千金，字字扣人心弦!&#39;, &#39;我为什么喜欢在京东买东西，因为今天买明天就可以送到。&#39;, &#39;非常感谢京东商城给予的优质的服务，从仓储管理、物流配送等各方面都是做的非常好的。&#39;];
+        tempInter = setInterval(function() {
+            window.clearInterval(tempInter);
+            $(&quot;#JDifr&quot;).contents().find(&quot;.star5:visible&quot;).each(function() {
+                isFiveStar ? $(this).click() : (Math.random(0, 1) &gt; 0.5 ? $(this).click() : $(this).siblings(&#39;.star4&#39;).click());
+            });
+            isTag = $(&quot;#JDifr&quot;).contents().find(&quot;.m-tagbox a&quot;);
+            if (isTag) {
+                $(&quot;#JDifr&quot;).contents().find(&quot;.m-tagbox a:first-child&quot;).addClass(&quot;tag-checked&quot;);
+            }
+            let tLen = $(&quot;#JDifr&quot;).contents().find(&#39;textarea:visible&#39;).length;
+            if (tLen) {
+                for (let ti = 0; ti &lt; tLen; ti++) {
+                    $(&quot;#JDifr&quot;).contents().find(&#39;textarea:visible&#39;).eq(ti).text(contentArr[Math.floor(contentArr.length * Math.random())]);
+                }
+            }
+            window.setTimeout(function() {
+                $(&quot;#JDifr&quot;).contents().find(&#39;.btn-submit&#39;)[0].click();
+                curId++;
+            },
+            100);
+        },
+        50);
+    }
+}</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <p>
+                
+                  <span>
+                <i class="iconfont icon-inbox"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+                      &nbsp;
+                    
+                  </span>&nbsp;&nbsp;
+                
+                
+              </p>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/M3U8%E4%B8%8B%E8%BD%BD%E5%99%A8/">
+                        <i class="fa fa-chevron-left"></i>
+                        <span class="hidden-mobile">M3U8下载器</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2019/%E8%BF%85%E9%9B%B7%E7%B2%BE%E7%AE%80%E7%89%881.5.3.288%E7%BB%BF%E8%89%B2%E4%BC%98%E5%8C%96%E7%89%88%E3%80%90%E6%94%AF%E6%8C%81%E7%A3%81%E5%8A%9B%E9%93%BE%E3%80%91/">
+                        <span class="hidden-mobile">迅雷精简版1.5.3.288绿色优化版【支持磁力链】</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+              
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc-start"></div>
+<div id="toc">
+  <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.staticfile.org/mdbootstrap/4.13.0/js/mdb.min.js" ></script>
+<script  src="/js/main.js" ></script>
+
+
+  <script  src="/js/lazyload.js" ></script>
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var navHeight = $('#navbar').height();
+      var toc = $('#toc');
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+      var tocLimMax = 2 * boardTop + boardCtn.height();
+
+      $(window).scroll(function () {
+        var tocLimMin = $('#toc-start').offset().top - navHeight;
+        var scroH = document.body.scrollTop + document.documentElement.scrollTop;
+
+        if (tocLimMin <= scroH && scroH <= tocLimMax) {
+          toc.css({
+            'display': 'block',
+            'position': 'fixed',
+            'top': navHeight,
+          });
+        } else if (scroH <= tocLimMin) {
+          toc.css({
+            'position': '',
+            'top': '',
+          });
+        } else if (scroH > tocLimMax) {
+          toc.css('display', 'none');
+        }
+      });
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc > p').css('visibility', 'visible');
+      }
+      var offset = boardCtn.css('margin-right')
+      $('#toc-ctn').css({
+        'right': offset
+      })
+    });
+  </script>
+
+
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+
+<!-- Plugins -->
+
+
+
+  <script  src="https://cdn.staticfile.org/prettify/188.0.0/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "京东自动好评得京东豆脚本&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

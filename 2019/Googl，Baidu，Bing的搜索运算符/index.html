@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Googl，Baidu，Bing的搜索运算符 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.13.0/css/mdb.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css" />
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link  rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css" />
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+<!-- 自定义样式保持在最底部 -->
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Hexo</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+                <p class="mt-3 post-meta">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                  星期四, 八月 22日 2019, 8:30 晚上
+                </p>
+              
+
+              <p class="mt-1">
+                
+                  
+                  <span class="post-meta">
+                    <i class="far fa-chart-bar"></i>
+                    4.9k 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta">
+                      <i class="far fa-clock"></i>
+                      17 分钟
+                  </span>
+                
+
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5 z-depth-3" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <div class="markdown-body">
+              <!--markdown-->### Google
+
+<ul>
+<li><p><code>&quot;&quot;</code></p>
+<p>代表完全匹配，使关键词不分开<br>例：“测试工程师” site: <a href="http://www.51job.com" target="_blank" rel="noopener">www.51job.com</a> </p>
+</li>
+<li><p><code>-</code><br>去掉特定信息。减号与前一个关键词之间一定要有一个空格，与后一个关键词之间一定不能有空格。搜索结果为，匹配前一个关键词但不匹配后一个关键词的结果。<br>例：景甜 -张继科      (可以查询到景甜的新闻，但是排除了与张继科的八卦)</p>
+</li>
+<li><p><code>AND</code><br>逻辑与。 一般用空格代替，还可以用“+”代替<br>例：景甜+长城  (返回的结果同时包含两者)</p>
+</li>
+<li><p><code>OR</code><br> 逻辑或。 可以用“|”代替<br> 例：景甜|张继科 (返回结果中，要么只含有“景甜”，要么只含有“张继科”，不可能是同时包含两个关键词。吐槽下，发现结果中还是会有同时包含两者的信息)</p>
+</li>
+<li><p><code>allinanchor:</code></p>
+<p>如果您开始使用查询<code>allinanchor:</code>，Google会将结果限制为包含您在页面链接上的<a href="http://www.googleguide.com/advanced_operators_reference.html#anchor_text" target="_blank" rel="noopener">锚文本中</a>指定的所有查询字词的网页。例如，[  <a href="http://www.google.com/search?q=allinanchor:+best+museums+sydney" target="_blank" rel="noopener">allinanchor：最佳博物馆悉尼</a>  ]将仅返回页面链接上的锚文本包含“最佳”，“博物馆”和“悉尼”字样的页面。锚文本是页面上的文本，链接到另一个网页或当前页面上的其他位置。当您单击锚文本时，您将被带到页面或放置在它链接的页面上。<code>allinanchor:</code>在查询中使用时，请勿包含任何其他搜索运算符。<code>allinanchor:</code>在Occurrences下的Advanced Web Search页面中也可以使用该功能。</p>
+</li>
+<li><p><code>allintext:</code></p>
+<p>如果您开始使用查询<code>allintext:</code>，Google会将结果限制为包含您在页面文本中指定的所有查询字词的结果。例如，[  <a href="http://www.google.com/search?q=allintext:+travel+packing+list" target="_blank" rel="noopener">allintext：travel packing list</a>  ]将仅返回页面文本中出现“travel”，“packing”和“list”字样的页面。此功能也可以通过Occurrences下的Advanced Web Search页面获得。</p>
+</li>
+<li><p><code>allintitle:</code></p>
+<p>如果您开始使用查询<code>allintitle:</code>，Google会将结果限制为包含您在<a href="http://www.googleguide.com/advanced_operators_reference.html#title" target="_blank" rel="noopener">标题中</a>指定的所有查询字词的结果。例如，[  <a href="http://www.google.com/search?q=allintitle:+detect+plagiarism" target="_blank" rel="noopener">allintitle：detect plagiarism</a>  ]将仅返回标题中包含“detect”和“plagiarism”字样的文档。此功能也可以通过Occurrences下的Advanced Web Search页面获得。该<em>标题</em>的网页通常在浏览器窗口的顶部，并在显示<a href="http://www.googleguide.com/results_page.html#page_title" target="_blank" rel="noopener">谷歌的一个页面的搜索结果第一行</a>。网站的作者使用HTML TITLE元素指定页面的标题。网页中只有一个标题。<code>allintitle:</code>在查询中使用时，请勿包含任何其他搜索运算符。allintitle的功能：也可以通过Occurrences下的Advanced Web Search页面获得。在图像搜索中，操作员<code>allintitle:</code>将返回名称中包含您指定的术语的文件中的图像。在Google新闻中，运营商<code>allintitle:</code>将返回标题包含您指定条款的文章。</p>
+</li>
+<li><p><code>allinurl:</code></p>
+<p>如果您开始使用查询<code>allinurl:</code>，Google会将结果限制为包含您在<a href="http://www.googleguide.com/advanced_operators_reference.html#url" target="_blank" rel="noopener">网址中</a>指定的所有查询字词的结果。例如，[  <a href="http://www.google.com/search?q=allinurl:+google+faq" target="_blank" rel="noopener">allinurl：google faq</a>  ]将只返回网址中包含“google”和“faq”字样的文档，例如“www。<strong>google</strong> .com / help / <strong>faq</strong> .html“。此功能也可以通过Occurrences下的Advanced Web Search页面获得。在URL中，单词通常一起运行。当你使用allinurl时，它们不需要一起运行：在Google新闻中，运营商<code>allinurl:</code>将返回标题包含您指定条款的文章。统一资源定位器（通常称为<em>URL</em>）是指定Internet上文件位置的地址。<code>allinurl:</code>在查询中使用时，请勿包含任何其他搜索运算符。<code>allinurl:</code>在Occurrences下的Advanced Web Search页面中也可以使用该功能。</p>
+</li>
+<li><p><code>author:</code></p>
+<p>如果您<code>author:</code>在查询中包含，Google会将您的<a href="http://www.googleguide.com/groups.html" target="_blank" rel="noopener">Google网上论坛</a>结果限制为包含您指定的作者的新闻组文章。作者可以是完整或部分姓名或电子邮件地址。例如，[  <a href="http://groups.google.com/groups?q=children+author:john+author:doe" target="_blank" rel="noopener">儿童作者：john作者：doe</a>  ]或[  <a href="http://groups.google.com/groups?q=children+author:doe@someaddress.com" target="_blank" rel="noopener">儿童作者：doe@someaddress.com</a>  ]返回包含John Doe或<a href="mailto:doe@someaddress.com">doe@someaddress.com</a>撰写的“儿童”一词的文章。Google会搜索您指定的内容。如果您的查询包含[  <a href="http://groups.google.com/groups?q=author:" target="_blank" rel="noopener"John+Doe"">作者：“John Doe”</a>  ]（带<a href="http://www.googleguide.com/quoted_phrases.html" target="_blank" rel="noopener">引号</a>），Google将找不到作者被指定为“Doe，John”的文章。</p>
+</li>
+<li><p><code>cache:</code></p>
+<p>该查询将显示Google的网页缓存版本，而不是当前版本的网页。例如，[  <a href="http://www.google.com/search?q=cache:www.eff.org" target="_blank" rel="noopener">cache：www.eff.org</a>  ]将显示Google的电子前沿基金会主页的缓存版本。<code>cache:*url*</code><strong>注意：</strong>请勿<code>cache:</code>在URL（网址）之间放置空格。在页面的缓存版本上，Google会突出显示在<code>cache:</code>搜索运算符后面显示的查询中的字词。例如，[  <a href="http://www.google.com/search?q=cache:www.pandemonia.com/flying/+fly+diary" target="_blank" rel="noopener">cache：www.pandemonia.com/flying/ fly diary</a>  ]将显示Google的飞行日记缓存版本，其中Hamish Reid记录了学习如何使用“飞行”和“日记”突出显示的飞行所涉及的内容。</p>
+</li>
+<li><p><code>define:</code></p>
+<p>如果您开始查询<code>define:</code>，Google会在网页上显示以下字词的定义。此高级搜索运算符可用于查找单词，短语和首字母缩略词的定义。例如，[  <a href="http://www.google.com/search?q=define:+blog" target="_blank" rel="noopener">define：blog</a>  ]将显示“Blog”（weB LOG）的定义。</p>
+</li>
+<li><p><code>ext:</code></p>
+<p>这是一个无证件的别名<code>filetype:</code>。</p>
+</li>
+<li><p><code>filetype:</code></p>
+<p>如果您在查询中包含，Google会将结果限制为名称结尾的网页。例如，[  <a href="http://www.google.com/search?q=web+page+evaluation+checklist+filetype:pdf" target="_blank" rel="noopener">网页评估核对表文件类型：pdf</a>  ]将返回与“网络”，“页面”，“评估”和“核对表”相匹配的Adobe Acrobat pdf文件。您可以将结果限制为名称以使用运算符的pdf和doc ，例如[  <a href="http://www.google.com/search?q=email+security+filetype:pdf+OR+filetype:doc" target="_blank" rel="noopener">email security filetype：pdf OR filetype：doc</a>  ]。<code>filetype:*suffix*</code><em>suffix</em><code>OR</code>如果您未在高级搜索表单或<code>filetype:</code>运算符中指定文件格式，Google会搜索各种文件格式; 请参阅<a href="http://www.googleguide.com/file_type.html" target="_blank" rel="noopener">文件类型转换中</a>的表格。</p>
+</li>
+<li><p><code>group:</code></p>
+<p>如果您<code>group:</code>在查询中包含，Google会将您的<a href="http://www.googleguide.com/groups.html" target="_blank" rel="noopener">Google网上论坛</a>结果限制为来自特定群组或子区域的新闻组文章。例如，[  <a href="http://groups.google.com/groups?q=sleep+group:misc.kids.moderated" target="_blank" rel="noopener">sleep group：misc.kids.moderated</a>  ]将返回包含单词“sleep”的组misc.kids.moderated中的文章，[  <a href="http://groups.google.com/groups?q=sleep+group:misc.kids" target="_blank" rel="noopener">sleep group：misc.kids</a>  ]将返回分区misc.kids中的文章包含“睡眠”这个词。</p>
+</li>
+<li><p><code>id:</code></p>
+<p>这是一个无证件的别名<code>info:</code>。</p>
+</li>
+<li><p><code>inanchor:</code></p>
+<p>如果您<code>inanchor:</code>在查询中包含，Google会将结果限制为包含您在<a href="http://www.googleguide.com/advanced_operators_reference.html#anchor_text" target="_blank" rel="noopener">锚文本中</a>指定的查询字词的页面或指向该页面的链接。例如，[  <a href="http://www.google.com/search?q=restaurants+inanchor:gourmet" target="_blank" rel="noopener">restaurant inanchor：gourmet</a>  ]将返回页面链接上的锚文本包含单词“gourmet”的页面，页面包含单词“restaurants”。</p>
+</li>
+<li><p><code>info:</code></p>
+<p>该查询将显示有关相应网页的一些信息。例如，[  <a href="http://www.google.com/search?q=info:gothotel.com" target="_blank" rel="noopener">info：gothotel.com</a>  ]将显示有关国家酒店目录GotHotel.com主页的信息。<code>info:*URL*</code><strong>注意：</strong><code>info:</code>网页URL与网页URL 之间不能有空格。通过直接在Google搜索框中键入网页网址，也可以获得此功能。</p>
+</li>
+<li><p><code>insubject:</code></p>
+<p>如果您<code>insubject:</code>在查询中包含，Google会将<a href="http://www.googleguide.com/groups.html" target="_blank" rel="noopener">Google网上论坛中的</a>文章限制为包含您在主题中指定的字词的文章。例如，[  <a href="http://groups.google.com/groups?q=insubject:" target="_blank" rel="noopener"falling+asleep"">insubject：“入睡”</a>  ]将返回包含主题中“入睡”一词的Google Group文章。相当于<code>intitle:</code>。</p>
+</li>
+<li><p><code>intext:</code></p>
+<p>查询将结果限制为包含在文本中的文档。例如，[  <a href="http://www.google.com/search?q=Hamish+Reid+intext:pandemonia" target="_blank" rel="noopener">Hamish Reid intext：pandemonia</a>  ]将返回文中提到“pandemonia”一词的文件，并在文件的任何地方提及“Hamish”和“Reid”的名称（文本与否）。<code>intext:*term*</code><em>term**</em>注意：**<code>intext:</code>和下一个单词之间不能有空格。将<code>intext:</code>查询中的每个单词放在前面等同于放在查询<code>allintext:</code>的前面，例如，[  <a href="http://www.google.com/search?q=intext:handsome+intext:poets" target="_blank" rel="noopener">intext：handsome intext：poets</a>  ]与[  <a href="http://www.google.com/search?q=allintext:+handsome+poets" target="_blank" rel="noopener">allintext：handsome poets</a>  ]相同。</p>
+</li>
+<li><p><code>intitle:</code></p>
+<p>查询将结果限制为包含在<a href="http://www.googleguide.com/advanced_operators_reference.html#title" target="_blank" rel="noopener">标题中的</a>文档。例如，[  <a href="http://www.google.com/search?q=flu+shot+intitle:help" target="_blank" rel="noopener">flu shot intitle：help</a>  ]将返回在其标题中提及“帮助”一词的文档，并在文档中的任何位置提及“流感”和“镜头”（标题与否）。<code>intitle:*term*</code><em>term**</em>注意：**<code>intitle:</code>和下一个单词之间不能有空格。放在<code>intitle:</code>查询中的每个单词前面等同于放在查询<code>allintitle:</code>的前面，例如，[  <a href="http://www.google.com/search?q=intitle:google+intitle:search" target="_blank" rel="noopener">intitle：google intitle：search</a>  ]与[  <a href="http://www.google.com/search?q=allintitle:+google+search" target="_blank" rel="noopener">allintitle：google search</a>  ]相同。</p>
+</li>
+<li><p><code>inurl:</code></p>
+<p>如果包括<code>inurl:</code>在查询中，谷歌将结果限制为包含在该字的文件<a href="http://www.googleguide.com/advanced_operators_reference.html#url" target="_blank" rel="noopener">URL</a>。例如，[  <a href="http://www.google.com/search?q=inurl:print+site:www.googleguide.com" target="_blank" rel="noopener">inurl：print site：www.googleguide.com</a>  ]搜索Google Guide上的网页，其中的网址包含“print”字样。它会查找位于Google上名为“print”的目录或文件夹中的pdf文件指南网站。查询[  <a href="http://www.google.com/search?q=inurl:healthy+eating" target="_blank" rel="noopener">inurl：healthy eating</a>  ]将返回在其URL中提及“健康”字样的文档，并在文档中的任何位置提及“吃”字样。<strong>注意：</strong><code>inurl:</code>和下一个单词之间不能有空格。放在<code>inurl:</code>查询中的每个单词前面相当于放在查询<code>allinurl:</code>的前面，例如，[  <a href="http://www.google.com/search?q=inurl:healthy+inurl:eating" target="_blank" rel="noopener">inurl：healthy inurl：eating</a>  ]与[  <a href="http://www.google.com/search?q=allinurl:+healthy+eating" target="_blank" rel="noopener">allinurl：healthy eating</a>  ]相同。在URL中，单词通常一起运行。当你使用inurl时，它们不需要一起运行：</p>
+</li>
+<li><p><code>link:</code></p>
+<p>该查询显示指向该页面的页面。例如，要查找指向Google Guide主页的网页，请输入：<code>link:*URL*</code><a href="http://www.googleguide.com/advanced_operators_reference.html#url" target="_blank" rel="noopener"><em>URL</em></a>[  <a href="http://www.google.com/search?q=link:www.googleguide.com" target="_blank" rel="noopener">link：www.googleguide.com</a>  ]<strong>注意：</strong>根据<a href="http://www.google.com/help/features.html#link" target="_blank" rel="noopener">Google的文档</a>，“您无法合并链接：使用常规关键字搜索进行搜索。”另请注意，当您<code>link:</code>与其他高级操作员合并时，Google可能不会返回所有匹配的页面。以下查询应返回大量结果，因为您可以看到是否删除了<code>-site:</code>每个查询中的术语。查找Google主页上不在Google自己网站上的链接。[  <a href="http://www.google.com/search?q=link:www.google.com+-site:google.com" target="_blank" rel="noopener">link：www.google.com -site：google.com</a>  ]查找不在自己网站上的UK Owners Direct主页的链接。[  <a href="http://www.google.com/search?q=link:www.ownersdirect.co.uk+-site:ownersdirect.co.uk" target="_blank" rel="noopener">link：www.www.ownersdirect.co.uk-site：ownersdirect.co.uk</a>  ]</p>
+</li>
+<li><p><code>location:</code></p>
+<p>如果您<code>location:</code>在<a href="http://www.googleguide.com/news.html" target="_blank" rel="noopener">Google新闻中</a>包含查询，则只会返回您指定位置的文章。例如，[  <a href="http://news.google.com/news?q=queen+location:canada" target="_blank" rel="noopener">皇后位置：加拿大</a>  ]将显示与加拿大网站中的“女王”一词相匹配的文章。许多其他国家名称起作用; 试试看，看看。两个字母的<a href="http://www.usps.com/ncsc/lookups/abbreviations.html" target="_blank" rel="noopener">美国州缩写</a>与美国各州相匹配，两个字母的加拿大省缩写（如新斯科舍省的NS）也有效 - 尽管有些省份在线没有很多报纸，所以你可能得不到多少结果。其他一些两个字母的缩写 - 例如英国的英国 - 也可以使用。</p>
+</li>
+<li><p><code>movie:</code></p>
+<p>如果您<code>movie:</code>在查询中包含，Google会查找与电影相关的信息。例如，请参阅<a href="http://googleblog.blogspot.com/2005/02/google-movies-now-playing.html" target="_blank" rel="noopener">Google的博客</a>。</p>
+</li>
+<li><p><code>related:</code></p>
+<p>该查询将列出<em>与</em>您指定的网页<em>类似</em>的网页。例如，[  <a href="http://www.google.com/search?q=related:www.consumerreports.org" target="_blank" rel="noopener">related：www.consumerreports.org</a>  ]将列出与Consumer Reports主页类似的网页。<code>related:*URL*</code><strong>注意：</strong>请勿<code>related:</code>在网页网址和网页网址之间添加空格。您还可以在Google主结果页面上的“相似页面”链接以及“高级搜索”页面的“页面特定搜索”区域中的类似选择器中找到类似页面。如果您希望经常搜索类似的网页，请考虑安装一个<a href="http://www.googleguide.com/tools.html#GoogleScout" target="_blank" rel="noopener">GoogleScout浏览器按钮</a>，该<a href="http://www.googleguide.com/tools.html#GoogleScout" target="_blank" rel="noopener">按钮</a>会搜索相似的网页。</p>
+</li>
+<li><p><code>site:</code></p>
+<p>如果您<code>site:</code>在查询中包含，Google会将您的搜索结果限制在您指定的网站或域中。例如，[  <a href="http://www.google.com/search?q=admissions+site:www.lse.ac.uk" target="_blank" rel="noopener">招生网站：www.lse.ac.uk</a>  ]将显示来自伦敦经济学院网站的招生信息，[  <a href="http://www.google.com/search?q=peace+site:gov" target="_blank" rel="noopener">和平网站：gov</a>  ]将查找有关该<code>.gov</code>领域内的和平的网页。您可以指定包含或不包含句点的域，例如，<code>.gov</code>或<code>gov</code>。<strong>注意：</strong>不要在“site：”和域之间包含空格。您可以使用许多的搜索运算符的结合基本的搜索运算符<code>+</code>，<code>–</code>，<code>OR</code>，和<code>&quot; &quot;</code>。例如，要从所有站点查找有关Windows安全性的信息<code>microsoft.com</code>，请输入：[  <a href="http://www.google.com/search?q=windows+security+-site:microsoft.com" target="_blank" rel="noopener">windows security -site：microsoft.com</a>  ]您还可以通过“高级搜索”页面上的域选择器将结果限制为站点或域。</p>
+</li>
+<li><p><code>source:</code></p>
+<p>如果您<code>source:</code>在查询中包含，<a href="http://www.googleguide.com/news.html" target="_blank" rel="noopener">Google新闻</a>会将您的搜索范围限制为来自新闻来源的文章以及您指定的ID。例如，[  <a href="http://news.google.com/news?q=election+source:new_york_times" target="_blank" rel="noopener">选举来源：new_york_times</a>  ]将返回“纽约时报”中出现的带有“选举”一词的文章。要查找新闻来源ID，请输入包含术语和您正在寻找的出版物名称的查询。您还可以在“高级新闻搜索”表单的“新闻来源”字段中指定发布名称。您可以在<code>source:</code>搜索运算符后面的查询框中找到新闻源ID 。例如，假设您在“新闻来源”框中输入出版物名称“Ha’aretz”，然后单击“ Google搜索”按钮。将显示结果页面，其搜索框包含[  <a href="http://news.google.com/news?q=peace+source:ha_aretz__subscription_" target="_blank" rel="noopener">和平来源：ha_aretz__subscription_</a>  ]。这意味着新闻来源ID为ha_aretz__subscription_。此查询仅返回包含以色列报纸“国土报”中“和平”一词的文章。</p>
+</li>
+<li><p><code>weather</code></p>
+<p>如果您输入带有单词<code>weather</code>和城市或位置名称的查询，如果Google识别出该位置，则预测将显示在结果页面的顶部。否则，您的结果通常会包含指向具有天气状况的网站的链接以及该位置的预测。由于天气不是高级操作员，因此无需在单词后面包含冒号。例如，[  <a href="http://www.google.com/search?c2coff=1&q=weather+Sunnyvale+CA&btnG=Search" target="_blank" rel="noopener">天气Sunnyvale CA</a>  ]将返回加利福尼亚州桑尼维尔的天气，[  <a href="http://www.google.com/search?c2coff=1&q=weather+94041&btnG=Search" target="_blank" rel="noopener">天气94041</a>  ]将返回包含邮政编码（美国邮政编码）94041（加利福尼亚州山景城）的城市天气。</p>
+</li>
+</ul>
+<p><strong>文章来源：</strong></p>
+<p><strong><a href="http://www.googleguide.com/advanced_operators_reference.html" target="_blank" rel="noopener">http://www.googleguide.com/advanced_operators_reference.html</a></strong></p>
+<p><strong><a href="https://www.jianshu.com/p/a23a4768a790" target="_blank" rel="noopener">https://www.jianshu.com/p/a23a4768a790</a></strong></p>
+<p><strong>推荐文章：<a href="https://www.zhihu.com/question/20161362/answer/34492900" target="_blank" rel="noopener">https://www.zhihu.com/question/20161362/answer/34492900</a></strong></p>
+<hr>
+<h3 id="Baidu"><a href="#Baidu" class="headerlink" title="Baidu"></a>Baidu</h3><ul>
+<li><code>&quot;&quot;</code><br>把搜索词放在双引号中，代表完全匹配搜索，也就是说搜索结果返回的页面包含双引号中出现的所有的词，连顺序也必须完全匹配。百度和Google都支持这个指令。例如搜索：“中药面膜”</li>
+<li><code>-</code><br>减号代表搜索不包含减号后面的词的页面。使用这个指令时减号前面必须是空格，减号后面没有空格，紧跟着需要排除的词。Google和百度都支持这个指令。例如：腰带-加工 返回的则是包含“皮带”这个词，却不包含“加工”这个词的结果</li>
+<li><code>*:</code><br>星号是常用的通配符，也可以用在搜索中。百度不支持号搜索指令。比如在Google中搜索：婴儿湿疹其中的号代表任何文字。返回的结果就不仅包含“男士皮带”，还包含了“男士腰带”，“男士裤带”等内容。</li>
+<li><code>inurl</code><br>inurl: 指令用于搜索查询词出现在url 中的页面。百度和Google都支持inurl指令。inurl指令支持中文和英文。比如搜索：inurl:鳄鱼皮腰带，返回的结果都是网址url中包含 “鳄鱼皮腰带”的页面，如：<a href="http://www.paikau.com/static/鳄鱼皮腰带.html。由于关键词出现在url中对排名有一定影响，使用" target="_blank" rel="noopener">www.paikau.com/static/鳄鱼皮腰带.html。由于关键词出现在url中对排名有一定影响，使用</a> inurl:搜索可以更准确地找到竞争对手。</li>
+<li><code>inanchor:</code><br>inanchor:指令返回的结果是导入链接锚文字中包含 搜索词的页面。百度不支持inanchor。比如在Google搜索 ：inanchor:腰带返回的结果页面本身并不一定包含“腰带”这两个字，而是指向这些页面的链接锚文字中出现了“腰带”这两个字。可以用来找到某个关 键词的竞争对手，而且这些竞争对手往往是做过SEO的。研究竞争对手页面有哪些外部链接，就可以找到很多链接资源.</li>
+<li>``intitle:`:<br>intitle: 指令返回的是页面title中包含关键词的页面。Google和百度都支持intitle 指令。使用intitle指令找到的文件是更准确的竞争页面。如果关键词只出现在页面可见文字中，而没有出现在title 中，大部分情况是并没有针对关键词进行优化，所以也不是有力的竞争对手。</li>
+<li><code>allintitle:</code><br>allintitle:搜索返回的是页面标题中包含多组关键词的文件。例如 ：allintitle:SEO 搜索引擎优化就相当于：intitle:SEO intitle:搜索引擎优化返回的是标题中既包含“SEO”，也包含“搜索引擎优化”的页面</li>
+<li><code>allinurl:</code><br>与allintitle: 类似。allinurl:SEO 搜索引擎优化就相当于：inurl:SEO inurl:搜索引擎优化</li>
+<li><code>filetype:</code><br>用于搜索特定文件格式。Google和百度都支持filetype指令。比如搜索filetype:pdf 腰带返回的就是包含腰带这个关键词的所有pdf文件。</li>
+<li><code>site:</code><br>site:是SEO最熟悉的高级搜索指令，用来搜索某个域名下的所有文件。</li>
+<li><code>linkdomain:</code><br>linkdomain: 指令只适用于雅虎，返回的是某个域名的反向链接。雅虎的反向链接数据还比较准确，是SEO人员研究竞争对手外部链接情况的重要工具之一。比如搜索 linkdomain:paikau.com-site:paikau.com得到的就是腰带厂的外部链接，因为-site:paikau.com已经排 除了派高皮具公司网站的页面，也就是内部链接，剩下的就都是外部链接了。</li>
+<li><code>related:</code><br>related:指令只适用于 Google，返回的结果是与某个网站有关联的页面。比如搜索related:paikau.com我们就可以得到Google所认为的与腰带厂有关联的 其他页面。 这种关联到底指的是什么，Google并没有明确说明，一般认为指的是有共同外部链接的网站。</li>
+<li><code>Domain:</code><br>用domain命令可以查找跟某一网站相关的信息。例提交“domain:<a href="http://www.paikau.com“" target="_blank" rel="noopener">www.paikau.com“</a></li>
+<li><code>Filetype:</code><br>限制查找文件的格式类型。目前可以查找的文件类型有.pdf/.doc/.xls/.ppt/.rtf 用法：搜索关键字 +filetype:ppt 例如：男士皮带+filetype:pdf</li>
+<li><code>inurl:</code><br>限定查询匹配只搜索URL链接。 inurl:腰带(查找网站目录收录不错)</li>
+<li><code>link:</code><br>网站外链接查询。Link:<a href="http://www.paikau.com" target="_blank" rel="noopener">www.paikau.com</a></li>
+<li><code>Site:</code><br>网站整站搜索引擎收录查询。例:site:<a href="http://www.paikau.com" target="_blank" rel="noopener">www.paikau.com</a></li>
+<li><code>intitle:</code><br>搜索网页标题中含有的关键词，例:想搜索标题中含有“广州腰带厂”的内容，搜索：intitle:广州腰带厂</li>
+</ul>
+<hr>
+<h3 id="Bing"><a href="#Bing" class="headerlink" title="Bing"></a>Bing</h3><ul>
+<li><code>contains:</code></li>
+</ul>
+<p>只搜索包含指定文件类型的链接的网站。</p>
+<ul>
+<li><code>filetype:</code></li>
+</ul>
+<p>仅返回以指定文件类型创建的网页。</p>
+<ul>
+<li><code>inanchor:、inbody:、intitle:</code></li>
+</ul>
+<p>这些关键字将返回元数据中包含指定搜索条件（如定位标记、正文或标题等）的网页。为每个搜索条件指定一个关键字，您也可以根据需要使用多个关键字。</p>
+<ul>
+<li><code>ip:</code></li>
+</ul>
+<p>查找托管在特定 IP 地址  的网站。IP 地址必须是以英文句点分开的地址。键入关键字 ip:，后面加网站的 IP 地址。</p>
+<ul>
+<li><code>language:</code></li>
+</ul>
+<p>返回指定语言的网页。在关键字 language: 后面直接指定语言代码。使用搜索生成器中的“语言”功能也可以指定网页的语言。</p>
+<ul>
+<li><code>loc: 或 location:</code></li>
+</ul>
+<p>返回特定国家或地区的网页。在关键字 loc: 后面直接指定国家或地区代码。若要搜索两种或两种以上语言，请使用逻辑运算符 OR 对语言分组。</p>
+<ul>
+<li><code>prefer:</code></li>
+</ul>
+<p>着重强调某个搜索条件或运算符，以限定搜索结果。</p>
+<ul>
+<li><code>site:</code></li>
+</ul>
+<p>返回属于指定网站的网页。若要搜索两个或更多域，请使用逻辑运算符 OR 对域进行分组。您可以使用 site: 搜索不超过两层的 Web 域、顶级域及目录。您还可以在一个网站上搜索包含特定搜索字词的网页。</p>
+<ul>
+<li><code>feed:</code></li>
+</ul>
+<p>在网站上查找搜索条件的 RSS (Really Simple Syndication ) 或 Atom 源。</p>
+<ul>
+<li><code>hasfeed:</code></li>
+</ul>
+<p>在网站上查找包含搜索条件的 RSS 或 Atom 源的网页。</p>
+<ul>
+<li><code>url:</code></li>
+</ul>
+<p>检查列出的域或网址是否位于 Bing 索引中。</p>
+
+            </div>
+            <hr>
+            <div>
+              <p>
+                
+                  <span>
+                <i class="iconfont icon-inbox"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+                      &nbsp;
+                    
+                  </span>&nbsp;&nbsp;
+                
+                
+              </p>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+                        <i class="fa fa-chevron-left"></i>
+                        <span class="hidden-mobile">常用正则表达式</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2019/%E7%99%BD%E6%8F%8F/">
+                        <span class="hidden-mobile">白描</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+              
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc-start"></div>
+<div id="toc">
+  <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.staticfile.org/mdbootstrap/4.13.0/js/mdb.min.js" ></script>
+<script  src="/js/main.js" ></script>
+
+
+  <script  src="/js/lazyload.js" ></script>
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var navHeight = $('#navbar').height();
+      var toc = $('#toc');
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+      var tocLimMax = 2 * boardTop + boardCtn.height();
+
+      $(window).scroll(function () {
+        var tocLimMin = $('#toc-start').offset().top - navHeight;
+        var scroH = document.body.scrollTop + document.documentElement.scrollTop;
+
+        if (tocLimMin <= scroH && scroH <= tocLimMax) {
+          toc.css({
+            'display': 'block',
+            'position': 'fixed',
+            'top': navHeight,
+          });
+        } else if (scroH <= tocLimMin) {
+          toc.css({
+            'position': '',
+            'top': '',
+          });
+        } else if (scroH > tocLimMax) {
+          toc.css('display', 'none');
+        }
+      });
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc > p').css('visibility', 'visible');
+      }
+      var offset = boardCtn.css('margin-right')
+      $('#toc-ctn').css({
+        'right': offset
+      })
+    });
+  </script>
+
+
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+
+<!-- Plugins -->
+
+
+
+  <script  src="https://cdn.staticfile.org/prettify/188.0.0/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Googl，Baidu，Bing的搜索运算符&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

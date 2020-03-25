@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>简单的正则表达式语法 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.13.0/css/mdb.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css" />
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link  rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css" />
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link defer rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+<!-- 自定义样式保持在最底部 -->
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Hexo</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+                <p class="mt-3 post-meta">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                  星期日, 二月 16日 2020, 10:11 晚上
+                </p>
+              
+
+              <p class="mt-1">
+                
+                  
+                  <span class="post-meta">
+                    <i class="far fa-chart-bar"></i>
+                    1.4k 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta">
+                      <i class="far fa-clock"></i>
+                      5 分钟
+                  </span>
+                
+
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5 z-depth-3" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <div class="markdown-body">
+              <!--markdown-->| 符号        | 意义                 | 说明                                                         |
+<p>| ———– | ——————– | ———————————————————— |<br>| .           | 任意一个字符         | 最简单的元字符，匹配任意字符，但不包括换行符“\n”。           |<br>| \           | 转义                 | 把元字符改变为普通字符，或者把某些普通字符转变为元字符。  比如，“.”就是代表普通的点号，不代表其他字符。 |<br>| \s          | 空白字符             | 半角空格、制表符等空白字符。在Sigil中还能匹配到换行符“\n”和空白行，使用要注意。  注意，不能匹配到全角空格。 |<br>| \t          | 制表符               | 匹配制表符。                                                 |<br>| \n          | 换行符               | 表示文章的换行，这是一个不可见符号，在例子中，这个符号在“_”的位置。aaa\n  bbb你能够通过“\n”找到换行符，但不能够插入换行符。要在替换结果中换行，需要用“\r”。 |<br>| \r          | 回车                 | 代表一个回车符。这个符号不会在文本中出现，因此不能查找到。  但是如果你需要在查找结果中插入一个换行，那么就要用“\r”。  注意，插入后在文本中出现的仍然会是“\n”而不是“\r”。 |<br>| \d          | 任意一个阿拉伯数字   | 也就是可以代表0<del>9中的任意一个。                              |<br>| \D          | 任意一个非阿拉伯数字 | 0</del>9以外的字符，同样的，不包括换行符“\n”                      |<br>| ^           | 行首                 | 即一行的开头。Sigil中不能单独使用，要配合其他字符。  比如，“^a”表示在行首的“a”，能匹配到第一行和第三行的字母“a”。第二行因为行首是空格，因此匹配不到。  abc  abc  abcd |<br>| $           | 行尾                 | 表示任意一行的结尾，不包括换行符。在Sigil中不能单独使用。  比如，“c$”表示位于行尾的“c”,能够匹配到第一行和第二行的字母“c”。  abc  abc  abcd |<br>| +           | 一或更多             | 表示一个或更多。必须配用其他字符使用。添加在一个字符后面，表示一个或更多个该字符。  相当于“{1,}”  比如，“a+”表示一个以上的“a”，以下例子都能匹配到。  a  aa  aaa |<br>| ?           | 尽可能少             | 表示尽可能少。必须配合其他字符使用。  比如，“accccbb”中“a.<em>b”匹配到“accccbb”，而“a.</em>?b”就能只匹配到“accccb”。  ※注意：在某些平台的正则表达式中，这一功能很可能由“-”减号提供。 |<br>| |          | 或                   | 一个逻辑选择符。  “aa|bb”既可以匹配到“aa”也可以匹配到“bb”。  可以用到多个选项中，比如“aa|bb|cc”。  “1|2|3”相当于“[123]”。 |<br>| *           | 尽可能多             | 即无或更多。相当于“{0,}”                                     |<br>| {n,m}       | 个数范围             | 表示匹配项的个数范围。  比如，“a{3}”表示“aaa”，“a{2,4}”表示“aa”或“aaa”或“aaaa”，“a{1,}”表示一个以上的“a”。  注意，“a{,2}”应该表示两个以下的“a”，但是这种写法在Sigil中无效，要写成“a{0,2}”。 |<br>| []          | 包含                 | “[]”本身匹配一个字符。  比如，“[abc]”匹配“a”、“b”或“c”。通常不分顺序，“[abc]”和“[bca]”一样。  “[]”中用“-”表示范围，“[a-z]”表能匹配到“a”到“z”全部26个字母之一。  比如，“[0-9]”和“\d”是一样的，但是“\d”速度更快。  如果要在“[]”中匹配“-”本身，把“-”写在最前面，或者把它转义“-”。  比如“[-0-9]”，就能匹配所有阿拉伯数字和“-”。 |<br>| [^]         | 不包含               | “[]”的逆操作。  比如“a[^b]c”，能匹配到第二行，第三行。abc  adc  afc注意，因为“[]”中符号是无序的，因此如果要排除字符串，要用其他方法。 |<br>| ()          | 捕获组               | “(abc)”表示把“abc”分为一组。分组后可以配合其他元字符使用。一个组称为一个捕获组。  比如，“(abc)+”就是一个或以上“abc”组合的意思。  捕获组中的内容会被记录并编号，可以通过“\0”“\1”这种形式来引用。 |<br>| (?:)        | 分组/非捕获组        | 作用上与“()”类似，能把内容分为一组，但“(?:)”仅有分组功能，不记录匹配内容。也就是说，无法通过“\0”“\1”等方式引用。  此元字符虽然消耗的资源更少，速度更快，在简单应用中可能体验不到与“()”的区别。 |<br>| \0，\1，\2… | 反向引用             | 配合分组使用，引用一个分组。  比如，在查找时有分组“(abc)”，那么“\1”就代表“abc”。有分组“a(bc)(de)f”，那么“\0”代表“abcdef”，“\1”代表“bc”，“\2”代表“de”。如此类推。  嵌套也是一样的，比如“(abc(def))”，“\1”代表“abcdef”，“\2”代表“def”。  同样地，也能在查找时应用。  比如有字符串“abc111abc”，那么表达式“(abc).<em>\1”就能匹配到所有内容。  注：在其他平台中，可能使用的是$0，$1等表示方法。 |<br>| (?s)        | 多行匹配             | 放在表达式的最前端，使得“.”可以匹配到“\n”，从而实现跨行匹配。  比如以下例子：<div></div>    <h1></h1>  <div></div>使用正则表达式“<div>.</em></div>”一次只能匹配到第一行或者第三行。  而使用“(?s)<div>.*</div>”则能一次性匹配到第一行到第三行所有内容。  注：这是Sigil特有元字符，其他平台有另外的方法实现该功能。  注2：此前缀和勾选“DotAll”效果一致。 |<br>| (?U)        | 最少匹配             | 放在表达式的最前端，使得整个正则表达式实现最少匹配。  比如以下例子：<div>AAA<div>BBB</div>CCC</div>正则表达式“<div>.*</div>”会匹配到整个句子。  而“(?U)<div>.*</div>”只会匹配到“<div>AAA<div>BBB</div>”。  注：这是Sigil特有元字符，其他平台有另外的方法实现该功能。  注2：此前缀和勾选“Minimal Match”效果一致。 |</p>
+
+            </div>
+            <hr>
+            <div>
+              <p>
+                
+                  <span>
+                <i class="iconfont icon-inbox"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+                      &nbsp;
+                    
+                  </span>&nbsp;&nbsp;
+                
+                
+              </p>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/Clash%20for%20Windows/">
+                        <i class="fa fa-chevron-left"></i>
+                        <span class="hidden-mobile">Clash for Windows</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/Resource%20Hacker%205.1.7%20%E7%BB%BF%E8%89%B2%E6%B1%89%E5%8C%96%E7%89%88/">
+                        <span class="hidden-mobile">Resource Hacker 5.1.7 绿色汉化版</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+              
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc-start"></div>
+<div id="toc">
+  <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="https://cdn.staticfile.org/mdbootstrap/4.13.0/js/mdb.min.js" ></script>
+<script  src="/js/main.js" ></script>
+
+
+  <script  src="/js/lazyload.js" ></script>
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var navHeight = $('#navbar').height();
+      var toc = $('#toc');
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+      var tocLimMax = 2 * boardTop + boardCtn.height();
+
+      $(window).scroll(function () {
+        var tocLimMin = $('#toc-start').offset().top - navHeight;
+        var scroH = document.body.scrollTop + document.documentElement.scrollTop;
+
+        if (tocLimMin <= scroH && scroH <= tocLimMax) {
+          toc.css({
+            'display': 'block',
+            'position': 'fixed',
+            'top': navHeight,
+          });
+        } else if (scroH <= tocLimMin) {
+          toc.css({
+            'position': '',
+            'top': '',
+          });
+        } else if (scroH > tocLimMax) {
+          toc.css('display', 'none');
+        }
+      });
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc > p').css('visibility', 'visible');
+      }
+      var offset = boardCtn.css('margin-right')
+      $('#toc-ctn').css({
+        'right': offset
+      })
+    });
+  </script>
+
+
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+
+<!-- Plugins -->
+
+
+
+  <script  src="https://cdn.staticfile.org/prettify/188.0.0/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "简单的正则表达式语法&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script defer src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
